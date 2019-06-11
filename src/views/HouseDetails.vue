@@ -77,7 +77,7 @@
           </ion-item-divider>
           <ion-item v-for="(member, index) of swornMembers" v-bind:key="index">
             <ion-label>
-              {{member.name}}
+              {{member ? member.name : ''}}
             </ion-label>
           </ion-item>
         </ion-item-group>
