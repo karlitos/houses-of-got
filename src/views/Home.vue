@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{this.$route.meta.title}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <HousesOfGoT />
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+
+import HousesOfGoT from '../components/HousesOfGoT.vue';
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld,
+  name: 'Home',
+  components: { HousesOfGoT },
+  data() {
+    return {};
   },
 };
 </script>
+
+<style>
+  ion-content {
+    --offset-bottom: -56px !important;
+  }
+</style>

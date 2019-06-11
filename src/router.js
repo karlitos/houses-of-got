@@ -1,23 +1,28 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import { IonicVueRouter } from '@ionic/vue';
 import Home from './views/Home.vue';
+import HouseDetails from './views/HouseDetails.vue';
 
-Vue.use(Router);
+Vue.use(IonicVueRouter);
 
-export default new Router({
+export default new IonicVueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'home',
       component: Home,
+      meta: {
+        title: 'Houses of Game of Thrones',
+      },
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: '/detail',
+      name: 'houseDetails',
+      component: HouseDetails,
+      meta: {},
+      props: true,
     },
   ],
 });

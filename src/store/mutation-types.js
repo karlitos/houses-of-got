@@ -1,0 +1,2 @@
+export const APPEND_HOUSES = 'SET_HOUSES';
+export const SET_CHARACTER = 'SET_CHARACTERS';
